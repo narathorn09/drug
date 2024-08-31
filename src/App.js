@@ -1,5 +1,5 @@
 import React from 'react';
-import FetchDrugData from './FetchDataCSV/FetchDrugData.js';
+import FetchDrugData from './fetchDataCSV/fetchDrugData.js';
 import { getFileIdFromUrl } from './util/getFileIdFromUrl.js';
 
 const App = (props) => {
