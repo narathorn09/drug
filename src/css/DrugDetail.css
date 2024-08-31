@@ -1,0 +1,25 @@
+.card-detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+}
+
+.pill-icon {
+    font-size: 32px;
+    color: var(--green);
+}
+
+.title-item {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: -12px;
+
+}
+
+.divider {
+    width: 100%;
+    height: 0.8px;
+    background-color: var(--green);
+    margin-bottom: 16px;
+}

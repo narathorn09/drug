@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
 /* Apply the font-family to the root element */
-#root {
+* {
   font-family: 'Prompt', sans-serif;
 }
 

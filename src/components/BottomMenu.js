@@ -5,8 +5,8 @@ const BottomMenu = () => {
 
     // Helper function to determine if the path is active
     const isActive = (path) => {
-        // If the current path is '/' or matches the given path, return 'active'
-        return location.pathname === path || (path === '/drug' && location.pathname === '/') ? 'active' : '';
+        // Check if the current path includes the given path
+        return location.pathname.includes(path) || (path === '/drug' && location.pathname === '/') ? 'active' : '';
     };
 
     return (
