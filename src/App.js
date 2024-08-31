@@ -11,9 +11,9 @@ function App() {
     <Router>
       <div>
         <Routes>
-          {/* <Route path="/" element={<Disease />} />
-          <Route path="/disease" element={<Disease />} />
-          <Route path="/disease/:id" element={<DiseaseDetail />} />  */}
+          <Route path="/" element={<Disease />} />
+          {/* <Route path="/disease" element={<Disease />} />
+          <Route path="/disease/:id" element={<DiseaseDetail />} />   */}
           <Route path="/drug" element={<Drug />} />
           <Route path="/drug/:id" element={<DrugDetail />} /> 
         </Routes>
