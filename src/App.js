@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Disease />} />
+          <Route path="/" element={<Drug />} />
           {/* <Route path="/disease" element={<Disease />} />
           <Route path="/disease/:id" element={<DiseaseDetail />} />   */}
           <Route path="/drug" element={<Drug />} />
