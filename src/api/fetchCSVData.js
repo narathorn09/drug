@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { csvUrl } from "./googleSheetURL";
 
-export default function FetchCSVData(props) {
+export default function FetchCSVData(sheetName) {
   const [csvData, setCsvData] = useState([]);
 
   // Define fetchCSVData before using it in useEffect
   const fetchCSVData = () => {
-    const csvUrl =
-      "https://docs.google.com/spreadsheets/d/1KpV8qDdc9vdnAaCxa8jln3plYpiPx9bjQbVmT-ktqYU/pub?gid=0&single=true&output=tsv"; // Replace with your Google Sheets CSV file URL
-
     axios
-      .get(csvUrl)
+      .get(csvUrl[sheetName])
       .then((response) => {
         const parsedCsvData = parseCSV(response.data);
         setCsvData(parsedCsvData);

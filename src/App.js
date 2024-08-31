@@ -1,43 +1,26 @@
 import React from 'react';
-import FetchDrugData from './fetchDataCSV/fetchDrugData.js';
-import { getFileIdFromUrl } from './util/getFileIdFromUrl.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Disease from './pages/Disease';
+import DiseaseDetail from './pages/DiseaseDetail';
+import Drug from './pages/Drug';
+import DrugDetail from './pages/DrugDetail';
+import BottomMenu from './components/BottomMenu';
 
-const App = (props) => {
-  // Fetch drug data
-  const csvData = FetchDrugData();
-
-  // Function to construct Google Drive image URL
-  const getImageUrlFromDriveId = (fileId) => {
-    return fileId ? `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000` : '';
-  };
-
+function App() {
   return (
-    <div className="container">
-      {csvData.map((e, i) => {
-        const fileId = getFileIdFromUrl(e?.ImageLink);
-        const imageUrl = getImageUrlFromDriveId(fileId);
-
-        return (
-          <div key={i}>
-            <h2>{e?.DrugName}</h2>
-            <p>{e?.Indications}</p>
-            <p>{e?.MechanismOfAction}</p>
-            <p>{e?.SideEffects}</p>
-            {/* Display the image with the transformed URL */}
-            {fileId ? (
-              <img
-                style={{ maxWidth: '100%', height: 'auto' }}
-                src={imageUrl}
-                alt={e?.DrugName}
-              />
-            ) : (
-              <p>No image available</p>
-            )}
-          </div>
-        );
-      })}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          {/* <Route path="/" element={<Disease />} />
+          <Route path="/disease" element={<Disease />} />
+          <Route path="/disease/:id" element={<DiseaseDetail />} />  */}
+          <Route path="/drug" element={<Drug />} />
+          <Route path="/drug/:id" element={<DrugDetail />} /> 
+        </Routes>
+        <BottomMenu />
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
