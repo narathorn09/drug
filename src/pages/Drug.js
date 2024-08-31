@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FetchCSVData from '../api/fetchCSVData.js';
 import { getFileIdFromUrl } from '../util/getFileIdFromUrl.js';
 import { getImageUrlFromDriveId } from '../util/getImageUrlFromDriveId.js';
 
-const Drug = (props) => {
+const Drug = () => {
     // Fetch drug data
     const drugDataTypeCD = FetchCSVData("Drug").filter((e) => e?.Type === "CD");
     const drugDataTypeP = FetchCSVData("Drug").filter((e) => e?.Type === "P");
@@ -31,6 +32,7 @@ const Drug = (props) => {
                         ) : (
                             <p>No image available</p>
                         )}
+                        <Link to={`/drug/${e?.ID}`}>ดูรายละเอียด</Link>
                     </div>
                 );
             })}
@@ -55,6 +57,7 @@ const Drug = (props) => {
                         ) : (
                             <p>No image available</p>
                         )}
+                        <Link to={`/drug/${e?.ID}`}>ดูรายละเอียด</Link>
                     </div>
                 );
             })}

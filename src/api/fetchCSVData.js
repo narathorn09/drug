@@ -6,8 +6,8 @@ export default function FetchCSVData(sheetName) {
   const [csvData, setCsvData] = useState([]);
 
   // Define fetchCSVData before using it in useEffect
-  const fetchCSVData = () => {
-    axios
+  const fetchCSVData = async () => {
+    await axios
       .get(csvUrl[sheetName])
       .then((response) => {
         const parsedCsvData = parseCSV(response.data);
