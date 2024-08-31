@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { csvUrl } from "./googleSheetURL";
+import { useDispatch } from "react-redux";
+import { setIsLoading } from "../redux/dataSlice.js";
 
-export default function FetchCSVData(sheetName) {
-  const [csvData, setCsvData] = useState([]);
+export default async function FetchCSVData(sheetName) {
 
-  // Define fetchCSVData before using it in useEffect
+  const dispatch = useDispatch();
+
   const fetchCSVData = async () => {
     await axios
       .get(csvUrl[sheetName])
@@ -15,12 +17,17 @@ export default function FetchCSVData(sheetName) {
       })
       .catch((error) => {
         console.error("Error fetching CSV data:", error);
-      });
-  };
+      })
+      .finally(() => {
+        dispatch(setIsLoading({ isLoading: false }));
+      })
+  }
 
   useEffect(() => {
+    dispatch(setIsLoading({ isLoading: true }));
     fetchCSVData();
   }, []);
+
 
   function parseCSV(csvText) {
     const rows = csvText.split(/\r?\n/);
@@ -37,5 +44,5 @@ export default function FetchCSVData(sheetName) {
     return data;
   }
 
-  return ;
+  return;
 }
