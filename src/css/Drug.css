@@ -1,0 +1,61 @@
+.container-drug-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid #ddd;  */
+    /* border-radius: 4px; */
+    height: 80px;
+    padding: 8px 16px; /* Combine padding properties for simplicity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-item-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 16px;
+}
+
+.card-container-img {
+    width: 60px;
+    height: 60px;
+    /* border-radius: 8px;  */
+    /* overflow: hidden; */
+}
+
+.card-container-img .img-item {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+/* Add this CSS to your stylesheet */
+
+.search-bar {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}

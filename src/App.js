@@ -4,7 +4,6 @@ import Disease from './pages/Disease';
 import DiseaseDetail from './pages/DiseaseDetail';
 import Drug from './pages/Drug';
 import DrugDetail from './pages/DrugDetail';
-import BottomMenu from './components/BottomMenu';
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
           <Route path="/disease/:id" element={<DiseaseDetail />} />   */}
           <Route path="/drug" element={<Drug />} />
           <Route path="/drug/:id" element={<DrugDetail />} /> 
-        </Routes>
-        <BottomMenu />
+        </Routes>       
       </div>
     </Router>
   );
