@@ -27,14 +27,14 @@ const Drug = () => {
         <div>
             <HeroImage
                 image="https://natcopharmausa.com/wp-content/uploads/2023/11/Slider-img-06-1024x683.jpg"
-                title="Welcome to My Website"
+                title="ยา & โรค"
                 subtitle="This is a subtitle for the hero image"
             />
             <div className='container'>
                 <div className='search-bar'>
                     <input
                         type="text"
-                        placeholder="Search for drugs..."
+                        placeholder="ค้นหาชื่อยา"
                         value={searchTerm}
                         onChange={handleSearchChange}
                     />

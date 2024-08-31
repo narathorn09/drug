@@ -36,26 +36,60 @@
 
 }
 
-/* Add this CSS to your stylesheet */
-
 .search-bar {
     margin: 20px auto;
     text-align: center;
 }
 
 .search-bar input {
-    width: 100%;
+    width: 70%;
     max-width: 400px;
     padding: 10px;
     font-size: 16px;
+    font-family: 'Prompt', sans-serif; /* Change this to your desired font */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
 }
 
+
 .search-bar input:focus {
+    border-color: rgba(8, 147, 70, 1);
+    outline: none;
+    box-shadow: 0 2px 6px rgba(8, 147, 70, 0.2);
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Adjust padding to make space for the icon */
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.input-icon-wrapper input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input field */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Icon color */
+    pointer-events: none; /* Prevent click on the icon */
+    font-size: 18px; /* Adjust icon size */
 }

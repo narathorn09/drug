@@ -6,6 +6,11 @@
   font-family: 'Prompt', sans-serif;
 }
 
+:root {
+  --green: rgba(8, 147, 70, 1);
+  --white: #ffffff;
+}
+
 body {
     margin: 0; 
     padding: 0; 
