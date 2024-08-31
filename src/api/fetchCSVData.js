@@ -11,8 +11,7 @@ export default function FetchCSVData(sheetName) {
       .get(csvUrl[sheetName])
       .then((response) => {
         const parsedCsvData = parseCSV(response.data);
-        setCsvData(parsedCsvData);
-        console.log(parsedCsvData);
+        localStorage.setItem('drugData', JSON.stringify(parsedCsvData));
       })
       .catch((error) => {
         console.error("Error fetching CSV data:", error);
@@ -38,5 +37,5 @@ export default function FetchCSVData(sheetName) {
     return data;
   }
 
-  return csvData;
+  return ;
 }

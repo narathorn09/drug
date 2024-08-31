@@ -4,7 +4,10 @@ const BottomMenu = () => {
     const location = useLocation();
 
     // Helper function to determine if the path is active
-    const isActive = (path) => location.pathname === path ? 'active' : '';
+    const isActive = (path) => {
+        // If the current path is '/' or matches the given path, return 'active'
+        return location.pathname === path || (path === '/drug' && location.pathname === '/') ? 'active' : '';
+    };
 
     return (
         <div className="navbar">

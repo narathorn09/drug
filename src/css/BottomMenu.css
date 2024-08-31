@@ -27,7 +27,7 @@
 
 /* Change the color of links on hover */
 .navbar .menu-item:hover {
-    background-color: var(--green);
+    background-color: rgba(8, 147, 70, 0.6);
     color: white;
 }
 

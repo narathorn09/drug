@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import FetchCSVData from '../api/fetchCSVData.js';
 import { getFileIdFromUrl } from '../util/getFileIdFromUrl.js';
 import { getImageUrlFromDriveId } from '../util/getImageUrlFromDriveId.js';
 import BottomMenu from '../components/BottomMenu.js';
 import HeroImage from '../components/HeroImage.js';
+import { CiRead } from "react-icons/ci";
 
 const Drug = () => {
-    // Fetch drug data
-    const drugData = FetchCSVData("Drug");
+    const [drugData, setDrugData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    FetchCSVData("Drug");
+
+    useEffect(() => {
+        const storedData = localStorage.getItem('drugData');
+        if (storedData) {         
+            setDrugData(JSON.parse(storedData));
+        } 
+    }, []);
     
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value.toLowerCase());
@@ -64,7 +72,7 @@ const Drug = () => {
                                     </div>
                                     <h4>{e?.DrugName}</h4>
                                 </div>
-                                <Link to={`/drug/${e?.ID}`}>ดูรายละเอียด</Link>
+                                <Link to={`/drug/${e?.ID}`}><CiRead className='icon-eye'/></Link>
                             </div>
                         );
                     })}
@@ -92,7 +100,7 @@ const Drug = () => {
                                     </div>
                                     <h4>{e?.DrugName}</h4>
                                 </div>
-                                <Link to={`/drug/${e?.ID}`}>ดูรายละเอียด</Link>
+                                <Link to={`/drug/${e?.ID}`}><CiRead className='icon-eye'/></Link>
                             </div>
                         );
                     })}

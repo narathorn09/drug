@@ -6,13 +6,16 @@ import { getImageUrlFromDriveId } from '../util/getImageUrlFromDriveId.js';
 
 const DrugDetail = () => {
     const { id } = useParams();
-    console.log("id", id);
+    const [drugData, setDrugData] = useState([]);
 
-    // Fetch drug data
-    const drugsData = FetchCSVData("Drug");
-    console.log("Fetched drug data:", drugsData);
+    useEffect(() => {
+        const storedData = localStorage.getItem('drugData');
+        if (storedData) {         
+            setDrugData(JSON.parse(storedData));
+        } 
+    }, []);
 
-    const drugDataById = drugsData.find((e) => e?.ID === id);
+    const drugDataById = drugData.find((e) => e?.ID === id);
     console.log("Filtered drug data by ID:", drugDataById);
     
     
