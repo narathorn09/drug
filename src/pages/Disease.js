@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FetchCSVData from '../api/fetchCSVData.js';
 import { getFileIdFromUrl } from '../util/getFileIdFromUrl.js';
@@ -29,9 +29,9 @@ const Disease = () => {
     return (
         <div>
             <HeroImage
-                image="https://natcopharmausa.com/wp-content/uploads/2023/11/Slider-img-06-1024x683.jpg"
-                title="ยา & โรค"
-                subtitle=""
+                image="https://www.merck.com/wp-content/uploads/sites/124/2020/02/infection-disease.jpeg?resize=666,664"
+                title="โรค"
+                subtitle="( Disease )"
             />
             <div className='container'>
                 <div className='search-bar'>
@@ -47,35 +47,37 @@ const Disease = () => {
                     {isLoading ? (
                         <SkeletonLoader />
                     ) : (
-                        filteredDiseases?.map((e, i) => {
-                            const fileId = getFileIdFromUrl(e?.ImageLink);
-                            const imageUrl = getImageUrlFromDriveId(fileId);
+                        filteredDiseases.length > 0 ? (
+                            filteredDiseases.map((e, i) => {
+                                const fileId = getFileIdFromUrl(e?.ImageLink);
+                                const imageUrl = getImageUrlFromDriveId(fileId);
 
-                            return (
-                                <div className='card-item' key={i} >
-                                    <div className='card-item-child'>
-                                        <div className='card-container-img'>
-                                            {fileId ? (
-                                                <img
-                                                    className='img-item'
-                                                    src={imageUrl}
-                                                    alt={e?.DiseaseName}
-                                                />
-                                            ) : (
-
-                                                <img
-                                                    className='img-item'
-                                                    src="assets/disease_default.png"
-                                                />
-
-                                            )}
+                                return (
+                                    <div className='card-item' key={i} >
+                                        <div className='card-item-child'>
+                                            <div className='card-container-img'>
+                                                {fileId ? (
+                                                    <img
+                                                        className='img-item'
+                                                        src={imageUrl}
+                                                        alt={e?.DiseaseName}
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        className='img-item'
+                                                        src="assets/disease_default.png"
+                                                    />
+                                                )}
+                                            </div>
+                                            <h4>{e?.DiseaseName}</h4>
                                         </div>
-                                        <h4>{e?.DiseaseName}</h4>
+                                        <Link to={`/disease/${e?.ID}`}><CiRead className='icon-eye' /></Link>
                                     </div>
-                                    <Link to={`/disease/${e?.ID}`}><CiRead className='icon-eye' /></Link>
-                                </div>
-                            );
-                        })
+                                );
+                            })
+                        ) : (
+                            <p>ไม่พบโรคที่ค้นหา</p>
+                        )
                     )}
                 </div>
             </div>

@@ -36,6 +36,10 @@
   font-size: 1.5rem; /* Adjust size as needed */
 }
 
+.hero-section .hero-content p {
+  font-size: 1.2rem;
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
   .hero-section h1 {

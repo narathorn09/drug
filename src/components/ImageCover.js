@@ -10,11 +10,16 @@ const ImageCover = ({ image }) => {
 
     return (
         <section className="image-cover" style={{ backgroundImage }}>
+            {image === "" ?
+                <div className="image-cover-content">
+                    ไม่มีรูปภาพ
+                </div> : <></>}
             <button className="go-back-button" onClick={handleGoBack}>
-            <CiCircleChevLeft className="go-back-icon" /> 
-            <p>ย้อนกลับ</p> 
+                <CiCircleChevLeft className="go-back-icon" />
+                <p>ย้อนกลับ</p>
             </button>
         </section>
+
     );
 };
 

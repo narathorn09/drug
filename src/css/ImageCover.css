@@ -10,7 +10,14 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: rgba(8, 147, 70, 0.8);
 }
+
+.image-cover .image-cover-content {
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+  }
 
 .go-back-button {
     position: absolute;
