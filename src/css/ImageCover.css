@@ -4,6 +4,7 @@
     height: 50vh; /* Adjust based on your needs */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
     display: flex;
@@ -11,6 +12,8 @@
     justify-content: center;
     overflow: hidden;
     background-color: rgba(8, 147, 70, 0.8);
+    box-shadow: 0 4px 6px rgba(8, 147, 70, 0.1);
+
 }
 
 .image-cover .image-cover-content {

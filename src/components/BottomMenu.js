@@ -13,6 +13,7 @@ const BottomMenu = () => {
         <div className="navbar">
             <Link className={`menu-item ${isActive('/drug')}`} to="/drug">ยา</Link>
             <Link className={`menu-item ${isActive('/disease')}`} to="/disease">โรค</Link>
+            <Link className={`menu-item ${isActive('/principles')}`} to="/principles">หลักการใช้ยา</Link>
         </div>
     );
 }

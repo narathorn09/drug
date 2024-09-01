@@ -4,6 +4,9 @@ import Disease from './pages/Disease';
 import DiseaseDetail from './pages/DiseaseDetail';
 import Drug from './pages/Drug';
 import DrugDetail from './pages/DrugDetail';
+import Principles from './pages/Principles';
+import PrinciplesDetail from './pages/PrinciplesDetail';
+
 
 function App() {
   return (
@@ -15,6 +18,8 @@ function App() {
           <Route path="/disease/:id" element={<DiseaseDetail />} />  
           <Route path="/drug" element={<Drug />} />
           <Route path="/drug/:id" element={<DrugDetail />} /> 
+          <Route path="/principles" element={<Principles />} />
+          <Route path="/principles/:id" element={<PrinciplesDetail />} /> 
         </Routes>       
       </div>
     </Router>

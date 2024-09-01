@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { csvUrl } from "./googleSheetURL";
 import { useDispatch } from "react-redux";
-import { setIsLoading, setDataDrugStore, setDataDiseaseStore } from "../redux/dataSlice.js";
+import { setIsLoading, setDataDrugStore, setDataDiseaseStore, setDataPrinciplesStore } from "../redux/dataSlice.js";
 
 export default function FetchCSVData(sheetName) {
 
@@ -17,6 +17,8 @@ export default function FetchCSVData(sheetName) {
           dispatch(setDataDrugStore({ data: parsedCsvData }));
         else if (sheetName == "Disease")
           dispatch(setDataDiseaseStore({ data: parsedCsvData }));
+        else if (sheetName == "Principles")
+          dispatch(setDataPrinciplesStore({ data: parsedCsvData }));
       })
       .catch((error) => {
         console.error("Error fetching CSV data:", error);

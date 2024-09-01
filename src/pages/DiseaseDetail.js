@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import FetchCSVData from '../api/fetchCSVData.js';
 import { getFileIdFromUrl } from '../util/getFileIdFromUrl.js';
 import { getImageUrlFromDriveId } from '../util/getImageUrlFromDriveId.js';
 import ImageCover from '../components/ImageCover.js';
